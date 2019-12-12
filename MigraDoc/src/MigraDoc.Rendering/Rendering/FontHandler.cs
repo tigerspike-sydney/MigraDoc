@@ -73,6 +73,8 @@ namespace MigraDoc.Rendering
                 style = font.Italic ? XFontStyle.BoldItalic : XFontStyle.Bold;
             else if (font.Italic)
                 style = XFontStyle.Italic;
+            else if (font.Strikeout)
+                style = XFontStyle.Strikeout;
 
             return style;
         }

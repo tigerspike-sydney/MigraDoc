@@ -568,6 +568,16 @@ namespace MigraDoc.DocumentObjectModel
         }
 
         /// <summary>
+        /// Gets or sets the italic property.
+        /// </summary>
+        [DV]
+        public bool Strikeout
+        {
+            get { return Font.Strikeout; }
+            set { Font.Strikeout = value; }
+        }
+
+        /// <summary>
         /// Gets or sets the underline property.
         /// </summary>
         [DV]

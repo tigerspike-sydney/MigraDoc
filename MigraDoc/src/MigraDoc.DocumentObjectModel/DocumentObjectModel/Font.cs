@@ -107,6 +107,9 @@ namespace MigraDoc.DocumentObjectModel
 
             if (!font._color.IsNull && (refFont == null || font.Color.Argb != refFont.Color.Argb))
                 Color = font.Color;
+
+            if (!font._strikeout.IsNull)
+                Strikeout = font.Strikeout;
         }
 
         /// <summary>
@@ -136,6 +139,9 @@ namespace MigraDoc.DocumentObjectModel
 
             if (!font._underline.IsNull)
                 Underline = font.Underline;
+
+            if (!font._strikeout.IsNull)
+                Strikeout = font.Strikeout;
 
             if (!font._color.IsNull)
                 Color = font.Color;
@@ -186,6 +192,17 @@ namespace MigraDoc.DocumentObjectModel
         }
         [DV]
         internal NBool _italic = NBool.NullValue;
+
+        /// <summary>
+        /// Gets or sets the strikeout property.
+        /// </summary>
+        public bool Strikeout
+        {
+            get { return _strikeout.Value; }
+            set { _strikeout.Value = value; }
+        }
+        [DV]
+        internal NBool _strikeout = NBool.NullValue;
 
         // THHO4STLA Implementation for Strikethrough in the forum: http://forum.pdfsharp.net/viewtopic.php?p=4636#p4636
         /// <summary>
